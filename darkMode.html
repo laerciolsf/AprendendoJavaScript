@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DarkMode</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        h2 {
+            text-align: center;
+            
+        }
+    </style>
+</head>
+
+<body id="b1">
+
+    <h1>Teste</h1>
+    <h2>Essa é uma pagina que muda a cor de fundo de acordo com a hora do dia</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis ipsum,
+        mollitia adipisci nemo inventore sapiente cupiditate,
+        sunt laudantium enim illum animi? Minus deserunt quisquam,
+        sequi beatae omnis exercitationem quasi debitis?</p>
+
+
+    <script>
+        window.onload = DarkMode;
+        function DarkMode() {
+            var a = document.getElementById('b1')
+            var agora = new Date()
+            var hora = agora.getHours()
+
+            if (hora >= 6 && hora < 12) {
+                a.style.background = 'white'
+                a.style.color = 'black'
+                
+            } else if (hora >= 12 && hora < 19) {
+                a.style.background = 'gray'
+                a.style.color = 'black'
+            } else if (hora >= 19 && hora < 24) {
+                a.style.background = 'black'
+                a.style.color = 'white'
+            } else {
+                a.style.background = 'black'
+                a.style.color = 'white'
+            }
+        }
+    </script>
+</body>
+</html>
